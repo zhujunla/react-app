@@ -1,3 +1,4 @@
 .bgColor {
-  background-image: url('images/girle.jpg');
+  background-image: url('containers/login/images/girle.jpg');
+  background-color: red;
 }
