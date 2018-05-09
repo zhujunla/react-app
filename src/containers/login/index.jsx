@@ -2,7 +2,7 @@ import React,{Component } from 'react';
 import ReactDOM from 'react-dom';
 import styles from './styles.css'
 import httpPromise from 'utils/zjl_Axios'
-
+import girl from './images/girle.jpg'
 
 class Login extends Component {
     constructor(props) {
@@ -12,9 +12,10 @@ class Login extends Component {
     componentDidMount(){
         const _this = this;
         httpPromise({
-            url: "/com/had-login/userInfo/getListUserinfo",
+            url: "/zjl_test/com/had-login/userInfo/getListUserinfo",
             method: 'post',
-            headers: { 'session_id': 'session_id'},
+            headers: { 'session_id': 'session_id',access_token:'06332fff92be4fae9765923877a86f91',},
+            
             data: {
                 pageSize: 1,
                 pageNumber: 1
@@ -41,6 +42,7 @@ class Login extends Component {
     render() { 
         return ( <div className={styles.bgColor}>
             为什么我找不到呢123456
+            <img src={girl} alt=""/>
         </div> )
     }
 }

@@ -17,14 +17,13 @@ module.exports =webpackMerge(webpackBase,{
         compress: true,
         open:true,
         host: 'localhost',
-        port: 8080,
-        index:'index.html',
+        port: 8080,        
         proxy: {
-            '/proxy': {
+            '/zjl_test': {
                 target: 'http://linux.fushoukeji.com/maqiapi',
                 changeOrigin: true,
                 pathRewrite: {
-                    '^/proxy': ''
+                    '^/zjl_test': ''
                 }
             }
         },

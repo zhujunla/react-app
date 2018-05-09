@@ -3,12 +3,16 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+
+const STATIC_PATH = 'static';
 module.exports = {
     // context: __dirname + '/build',
     entry: "./src/app.js",
     output: {
-        path: __dirname + '/build/',
-        filename: "bundle.js"
+        // path: __dirname + '/build/',
+        path: path.resolve("build"),
+        filename: `${STATIC_PATH}/js/bundle.js`,
+        publicPath: "/"
     },
     devtool: 'none',//打包方式
     resolve: {
@@ -28,7 +32,7 @@ module.exports = {
                 plugins: ['transform-runtime'],
                 presets: ['es2015', 'react', 'stage-2']
             }
-        }, 
+        },
         // {
         //     test: /\.less|css$/,
         //     use: [
@@ -40,51 +44,63 @@ module.exports = {
         //         }},
         //          'less-loader'          
         //     ]
-        // }     
-         {
+        // }
+        // 
+        {
+
+            test: /\.(gif|png|jpe?g|svg)$/i,
+            loader: 'url-loader',
+            options: {
+                limit:10000,
+                name:`${STATIC_PATH}/images/[hash:8].[name].[ext]`
+                // publicPath:`${STATIC_PATH}/image/styles.css`
+            },
+        },
+
+        {
             test: /\.(css|less)$/,
             include: path.join(__dirname, 'node_modules'),
-            loader:ExtractTextPlugin.extract({
+            loader: ExtractTextPlugin.extract({
                 fallback: "style-loader",
                 use: [
-                    "css-loader",                   
+                    "css-loader",
                     {
-                        loader:'less-loader' ,
-                        options:{
-                            javascriptEnabled:true
+                        loader: 'less-loader',
+                        options: {
+                            javascriptEnabled: true
                         }
-                    }         
+                    }
                 ]
             })
-        /**
-         * 主项目的css合并到style.css
-         */
         },
         {
-            test: /\.less|css$/, 
-            include: path.join(__dirname, 'src'),          
-            loader:ExtractTextPlugin.extract({
+            test: /\.less|css$/,
+            include: path.join(__dirname, 'src'),
+            loader: ExtractTextPlugin.extract({
                 fallback: "style-loader",
                 use: [
-                    { loader: "css-loader",options: { 
-                        importLoaders: 1,
-                        modules:true,                                          
-                        localIdentName:'[name]__[local]-[hash:base64:5]'                
-                        // localIdentName:'[local]'                
-                    }},                   
                     {
-                        loader:'less-loader' ,
-                        options:{
-                            javascriptEnabled:true
+                        loader: "css-loader", options: {
+                            importLoaders: 1,
+                            modules: true,
+                            localIdentName: '[name]__[local]-[hash:base64:5]',
+                            // url:false
+                            // localIdentName:'[local]'                
                         }
-                    }         
+                    },
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            javascriptEnabled: true
+                        }
+                    }
                 ]
             })
-            
+
         }
-    ]
+        ]
     },
     plugins: [
-        new ExtractTextPlugin("styles.css"),
-      ] 
+        new ExtractTextPlugin(`${STATIC_PATH}/css/styles.css`),
+    ]
 }
