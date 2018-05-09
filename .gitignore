@@ -1,4 +1,4 @@
-./node_modules/
+/node_modules/
 .project
 .settings      
  ##filter databfile、sln file##
