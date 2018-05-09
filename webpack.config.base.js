@@ -40,19 +40,44 @@ module.exports = {
         //         }},
         //          'less-loader'          
         //     ]
-        // }
-        {
-            test: /\.less|css$/,
+        // }     
+         {
+            test: /\.(css|less)$/,
+            include: path.join(__dirname, 'node_modules'),
             loader:ExtractTextPlugin.extract({
                 fallback: "style-loader",
                 use: [
-                    
+                    "css-loader",                   
+                    {
+                        loader:'less-loader' ,
+                        options:{
+                            javascriptEnabled:true
+                        }
+                    }         
+                ]
+            })
+        /**
+         * 主项目的css合并到style.css
+         */
+        },
+        {
+            test: /\.less|css$/, 
+            include: path.join(__dirname, 'src'),          
+            loader:ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: [
                     { loader: "css-loader",options: { 
                         importLoaders: 1,
-                        modules:true,
+                        modules:true,                                          
                         localIdentName:'[name]__[local]-[hash:base64:5]'                
-                    }},
-                    'less-loader'          
+                        // localIdentName:'[local]'                
+                    }},                   
+                    {
+                        loader:'less-loader' ,
+                        options:{
+                            javascriptEnabled:true
+                        }
+                    }         
                 ]
             })
             
