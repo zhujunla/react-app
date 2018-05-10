@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import styles from './styles.css'
+import styles from './styles.css';
+import classNameS from 'classnames';
 import {getListUserinfo} from './axiosUse'
 import girl from './images/girle.jpg'
 class Login extends Component {
@@ -34,7 +35,7 @@ class Login extends Component {
         })
     }
     render() {
-        return (<div className={styles.bgColor + ' ' + styles.hehe}>
+        return (<div className={classNameS(styles.bgColor,styles.hehe)}>
             为什么我找不到呢123456
            <div>
                 <img src={girl} alt="" />
