@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -14,13 +14,15 @@ module.exports = {
         filename: `${STATIC_PATH}/js/bundle.js`,
         publicPath: "/"
     },
-    devtool: 'none',//打包方式
+    devtool: 'inline-source-map',//报错能回到源文件位置
     resolve: {
         enforceExtension: false,
         extensions: [".js", ".jsx"],
         alias: {
             utils: path.resolve(__dirname, 'src/utils/'),
-            containers: path.resolve(__dirname, 'src/containers/')
+            containers: path.resolve(__dirname, 'src/containers/'),
+            src: path.resolve(__dirname, 'src'),
+
         }
     },
     module: {
@@ -48,7 +50,7 @@ module.exports = {
         // 
         {
 
-            test: /\.(gif|png|jpe?g|svg)$/i,
+            test: /\.(gif|png|jpe?g|svg|icon|ico)$/i,
             loader: 'url-loader',
             options: {
                 limit:10000,
@@ -83,7 +85,7 @@ module.exports = {
                         loader: "css-loader", options: {
                             importLoaders: 1,
                             modules: true,
-                            localIdentName: '[name]__[local]-[hash:base64:5]',
+                            localIdentName: '[name]__[local]-[hash:base64:8]',
                             // url:false
                             // localIdentName:'[local]'                
                         }
@@ -102,5 +104,11 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin(`${STATIC_PATH}/css/styles.css`),
+        new HtmlWebpackPlugin({
+            title: 'react—app',
+            template: './public/index.html',
+            favicon: 'src/images/bitbug_favicon.ico',
+            hash: true
+          })
     ]
 }
