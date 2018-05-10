@@ -1,10 +1,6 @@
 .styles__bgColor-NwyehRTN {
-  background-image: url(/./static/images/af022a68.girle.jpg);
-  background-color: red;
+  background-image: url(/static/images/af022a68.girle.jpg);
   background-repeat: no-repeat;
-}
-.styles__hehe-1pzUE7Rn {
-  height: 500px;
 }
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable no-duplicate-selectors */
@@ -2224,3 +2220,5 @@ mark {
     padding: 0;
   }
 }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdGF0aWMvY3NzL3N0eWxlcy5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
