@@ -1,6 +1,7 @@
 import React,{Component } from 'react';
 import ReactDOM from 'react-dom';
-import Login from 'containers/login/index'
+import Login from 'containers/login'
+import Echarts from 'containers/Echarts'
 
 class App extends Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class App extends Component {
     render() { 
         return ( <div>
            <Login></Login>
+           <Echarts></Echarts>
         </div> )
     }
 }
