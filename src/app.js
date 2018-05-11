@@ -2,7 +2,9 @@ import React,{Component } from 'react';
 import ReactDOM from 'react-dom';
 import Login from 'containers/login'
 import Echarts from 'containers/Echarts'
-
+// import Chongqing from 'containers/Echarts/province/chongqing'
+import './plugains/vintage'
+import './plugains/bmap'
 class App extends Component {
     constructor(props) {
         super(props);
@@ -10,8 +12,9 @@ class App extends Component {
     }
     render() { 
         return ( <div>
-           <Login></Login>
+           {/* <Login></Login> */}
            <Echarts></Echarts>
+           {/* <Chongqing></Chongqing> */}
         </div> )
     }
 }
