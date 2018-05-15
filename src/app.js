@@ -2,7 +2,7 @@ import React,{Component } from 'react';
 import ReactDOM from 'react-dom';
 import Login from 'containers/login'
 import Echarts from 'containers/Echarts'
-// import Chongqing from 'containers/Echarts/province/chongqing'
+// import Chongqing from 'containers/Echarts/province/chongqing' 
 import './plugains/vintage'
 import './plugains/bmap'
 class App extends Component {
