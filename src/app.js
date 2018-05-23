@@ -13,7 +13,7 @@ class App extends Component {
         this.state = {  }
     }
     render() { 
-        return ( <div>
+        return ( <div> 
             <CycleLoading/>        
             <CycleLoading.CylcleLoadingOne/> 
             <CycleLoading.CylcleLoadingOne/> 
