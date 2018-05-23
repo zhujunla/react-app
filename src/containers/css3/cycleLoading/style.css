@@ -1,0 +1,66 @@
+.cycleLoading {
+  height: 20px;
+}
+.cycleLoading .father {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  float: left;
+  line-height: 20px;
+}
+.cycleLoading .child {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: green;
+  animation: cycleLoading 2s infinite;
+}
+.cycleLoading .child1 {
+  animation-delay: 0s;
+}
+.cycleLoading .child2 {
+  animation-delay: .25s;
+}
+.cycleLoading .child3 {
+  animation-delay: .5s;
+}
+.cycleLoading .child4 {
+  animation-delay: .75s;
+}
+.cycleLoading .child5 {
+  animation-delay: 1s;
+}
+@keyframes cycleLoading {
+  0% {
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+  }
+  25% {
+    opacity: 0.75;
+    width: 17px;
+    height: 17px;
+    border-radius: 100%;
+  }
+  50% {
+    opacity: 0.5;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+  }
+  75% {
+    opacity: 0.25;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+}

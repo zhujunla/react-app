@@ -18,25 +18,25 @@ class Echarts extends Component {
         myEcharts.setOption({
             title: [{
                 text: 'Line Charts',
-                link:'https://www.baidu.com',
-                subtext:'百度旗下'
-            },{
+                link: 'https://www.baidu.com',
+                subtext: '百度旗下'
+            }, {
                 text: 'Line Charts',
-                link:'https://www.taobao.com',
-                subtext:'淘宝旗下',
+                link: 'https://www.taobao.com',
+                subtext: '淘宝旗下',
                 top: '55%',
             }],
-            legend:{
-                type:'scroll',
+            legend: {
+                type: 'scroll',
                 formatter: function (name) {
                     return name;
                 },
                 // tooltip: {
                 //     show: true
                 // },
-                left:'center',
-                itemWidth:25,
-                
+                left: 'center',
+                itemWidth: 25,
+
                 // selectedMode:'single'
                 // width:'10'
                 // data: [{
@@ -48,7 +48,7 @@ class Echarts extends Component {
                 //         color: 'blue'
                 //     }
                 // }]
-                
+
             },
             grid: [{
                 bottom: '60%',
@@ -61,9 +61,9 @@ class Echarts extends Component {
                         label: {
                             show: true,
                         }
-                        
+
                     },
-                
+
                     // formatter:'{a0}: {c0}<br />{a1}: {c1}'
                 },
             }, {
@@ -77,57 +77,69 @@ class Echarts extends Component {
                         label: {
                             show: true,
                         }
-                        
+
                     },
-                    
+
                     // formatter:'{a0}: {c0}<br />{a1}: {c1}'
                 },
             }],
             xAxis: [{
                 data: ['张三', '李四', '王麻子', '礼物', 'QAQ'],
-                gridIndex:0,
-            },{
-                data: ['张三', '李四', '王麻子', '礼物', 'QAQ'],
-                gridIndex:1,
+                gridIndex: 0,
+            }, {
+                data: ['张三', '李四', '王麻子', '礼物', 'QAQ', '李四', '王麻子', '礼物', , '李四', '王麻子', '礼物', , '李四', '王麻子', '礼物',],
+                gridIndex: 1,
             }],
             yAxis: [{
 
-            },{
+            }, {
                 gridIndex: 1
             }],
-            tooltip:{
-                alwaysShowContent:false,
-                enterable:true,
+            tooltip: {
+                alwaysShowContent: false,
+                enterable: true,
             },
-
+            dataZoom: [{
+                type: 'slider',
+                show: true,
+                // xAxisIndex: [0],
+                // start: 1,
+                // end: 35
+            }, {
+                type: 'inside',
+                yAxisIndex: [0],
+                xAxisIndex:[0],
+                start: 29,
+                end: 36
+            }],
             series: [{
-                name:'重庆温度',
+                name: '重庆温度',
                 type: 'line',
                 data: [18.5555, 28.22222, 8.22355, 28.15515, 18]
-            },{
-                name:'北京温度',
+            }, {
+                name: '北京温度',
                 type: 'scatter',
                 data: [15.5555, 25.22222, 6.22355, 5.15515, 8]
-            },{
-                name:'上海温度',
+            }, {
+                name: '上海温度',
                 type: 'effectScatter',
                 data: [25.5555, 15.22222, 30.22355, 22.15515, 19]
-            },{
-                name:'深证温度',
+            }, {
+                name: '深证温度',
                 type: 'effectScatter',
                 data: [15.5555, 45.22222, 6.22355, 50.15515, 30]
-            },{
-                name:'海口温度',
+            }, {
+                name: '海口温度',
                 type: 'line',
                 data: [10.5555, 55.22222, 8.22355, 40.15515, 22]
-            },{
-                name:'南岸湿度',
+            }, {
+                name: '南岸湿度',
                 type: 'line',
-                data: [22.5555, 52.22222, 24.22355, 0.15515, 2],
+                data: [22.5555, 52.22222, 24.22355, 0.15515, 2, 52.22222, 24.22355, 0.15515, 2, 52.22222, 24.22355, 0.15515, 2, 52.22222, 24.22355, 0.15515, 2],
                 xAxisIndex: 1,
                 yAxisIndex: 1
             }],
-            
+
         });
 
 

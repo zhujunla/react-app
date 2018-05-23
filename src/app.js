@@ -1,10 +1,12 @@
 import React,{Component } from 'react';
 import ReactDOM from 'react-dom';
-import Login from 'containers/login'
-import Echarts from 'containers/Echarts'
-// import Chongqing from 'containers/Echarts/province/chongqing' 
-import './plugains/vintage'
-import './plugains/bmap'
+// import Login from 'containers/login'
+// import Echarts from 'containers/Echarts' containers
+import CycleLoading from "containers/css3/cycleLoading";
+import Accordion from "containers/css3/accordion";
+// import Chongqing from 'containers/Echarts/province/chongqing'
+// import './plugains/vintage'
+// import './plugains/bmap'
 class App extends Component {
     constructor(props) {
         super(props);
@@ -12,8 +14,14 @@ class App extends Component {
     }
     render() { 
         return ( <div>
+            <CycleLoading/>        
+            <CycleLoading.CylcleLoadingOne/> 
+            <CycleLoading.CylcleLoadingOne/> 
+            <div style={{marginTop:'30px'}}>
+                <Accordion/>   
+            </div>        
            {/* <Login></Login> */}
-           <Echarts></Echarts>
+           {/* <Echarts></Echarts> */}
            {/* <Chongqing></Chongqing> */}
         </div> )
     }

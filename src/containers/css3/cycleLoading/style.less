@@ -1,0 +1,62 @@
+.cycle(@width:20px,@height:20px,@borR:100%){
+    width: @width;
+    height: @height;
+    border-radius: @borR;
+}
+.opacity(@num:1){
+    opacity: @num;
+}
+.cycleLoading{
+    height: 20px;
+    .father{
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        float: left;
+        line-height: 20px;
+    }
+    .child{
+        .cycle();
+        display: inline-block;
+        margin-right: 10px;
+        background-color: green;
+        animation: cycleLoading 2s infinite;
+    }
+    .child1{        
+        animation-delay:0s;
+    }
+    .child2{        
+        animation-delay:.25s;
+    }
+    .child3{        
+        animation-delay:.5s;
+    }
+    .child4{        
+        animation-delay:.75s;
+    }
+    .child5{        
+        animation-delay:1s;
+    }
+}
+@keyframes cycleLoading{
+    0% {
+        .opacity(1);
+        .cycle();
+    }
+    25%{
+        .opacity(.75);
+        .cycle(17px,17px);
+    }
+    50%{
+        .opacity(.50);
+        .cycle(15px,15px);
+    }
+    75%{
+        .opacity(.25);
+        .cycle(10px,10px);
+    }
+    100%{
+        .opacity(0);
+        .cycle(10px,10px);
+    }
+}

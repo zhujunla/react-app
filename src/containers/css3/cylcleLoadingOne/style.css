@@ -1,0 +1,89 @@
+.cycleLoading {
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  position: relative;
+  animation: cycleLoadingOne 1s infinite;
+}
+.cycleLoading .child {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  position: absolute;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: green;
+  animation: cycleLoading 2s infinite;
+}
+.cycleLoading .child1 {
+  left: 0px;
+  top: 0px;
+  animation-delay: 0s;
+}
+.cycleLoading .child2 {
+  right: -10px;
+  top: 0px;
+  animation-delay: 0.33s;
+}
+.cycleLoading .child3 {
+  right: -10px;
+  bottom: 0px;
+  animation-delay: 0.66s;
+}
+.cycleLoading .child4 {
+  left: 0px;
+  bottom: 0px;
+  animation-delay: 1s;
+}
+@keyframes cycleLoadingOne {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(36deg);
+  }
+  20% {
+    transform: rotate(72deg);
+  }
+  30% {
+    transform: rotate(108deg);
+  }
+  40% {
+    transform: rotate(144deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  60% {
+    transform: rotate(216deg);
+  }
+  70% {
+    transform: rotate(252deg);
+  }
+  80% {
+    transform: rotate(288deg);
+  }
+  90% {
+    transform: rotate(324deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes cycleLoading {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+  }
+}
